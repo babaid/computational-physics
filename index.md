@@ -412,7 +412,7 @@ If you want to use an automated system for managing links, see [Automated Links]
 <script>
 let tabData = [
   { name: 'Julia', content: '// Julia code here you mf' },
-  { name: 'Python', content: '// Python code here' },
+  { name: 'Python', content: '// Python code here :()' },
   { name: 'Cpp', content: '// Cpp code here' }
 ];
 
