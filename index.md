@@ -409,14 +409,6 @@ See the topics under "Formatting" in the sidebar for more information.
 
 If you want to use an automated system for managing links, see [Automated Links][mydoc_hyperlinks.html#automatedlinks]. This approach automatically creates a list of Markdown references to simplify linking.
 
-## Other instructions
-
-The content here is just a getting started guide only. For other details in working with the theme, see the various sections in the sidebar.
-
-{% include links.html %}
-
-
-
 <div class="tab">
   <button class="tablinks" onclick="openTab(event, 'Julia')">Julia</button>
   <button class="tablinks" onclick="openTab(event, 'Python')">Python</button>
@@ -441,3 +433,14 @@ The content here is just a getting started guide only. For other details in work
     // Cpp code here
     </pre>
 </div>
+
+
+## Other instructions
+
+The content here is just a getting started guide only. For other details in working with the theme, see the various sections in the sidebar.
+
+{% include links.html %}
+
+
+
+
