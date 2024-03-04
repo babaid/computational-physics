@@ -23,7 +23,7 @@ entries:
     output: web, pdf
     folderitems:
 
-    - title: Get started
+    - title: Get Started
       url: /index.html
       output: web, pdf
       type: homepage
@@ -36,7 +36,7 @@ entries:
       url: /mydoc_supported_features.html
       output: web, pdf
 
-    - title: About the theme author
+    - title: About the theme authors
       url: /mydoc_about.html
       output: web, pdf
 
@@ -44,7 +44,7 @@ entries:
       url: /mydoc_support.html
       output: web, pdf
 
-  - title: Release Notes
+  - title: Numerical Differentiation
     output: web, pdf
     folderitems:
 
@@ -56,7 +56,7 @@ entries:
       url: /mydoc_release_notes_50.html
       output: web, pdf
 
-  - title: Installation
+  - title: Numerical Integration
     output: web, pdf
     folderitems:
 
@@ -72,7 +72,7 @@ entries:
       url: /mydoc_install_jekyll_on_windows.html
       output: web, pdf
 
-  - title: Authoring
+  - title: Linear Algebra
     output: web, pdf
 
     folderitems:
@@ -108,7 +108,7 @@ entries:
       url: /mydoc_atom_text_editor.html
       output: web, pdf
 
-  - title: Navigation
+  - title: Root Finding
     output: web, pdf
 
     folderitems:
@@ -128,7 +128,7 @@ entries:
       url: /mydoc_series.html
       output: web, pdf
 
-  - title: Formatting
+  - title: Data Fitting
     output: web, pdf
 
     folderitems:
@@ -176,7 +176,7 @@ entries:
       url: /mydoc_workflow_maps.html
       output: web, pdf
 
-  - title: Handling reviews
+  - title: Interpolation
     output: web, pdf
 
     folderitems:
@@ -184,11 +184,8 @@ entries:
       url: /mydoc_commenting_on_files.html
       output: web, pdf
 
-#    - title: Git collaboration
-#      url: /mydoc_git_collaboration
-#      output: web, pdf
 
-  - title: Publishing
+  - title: Ordinary Differential Equations
     output: web, pdf
 
     folderitems:
@@ -224,7 +221,7 @@ entries:
       url: /mydoc_publishing_github_pages.html
       output: web, pdf
 
-  - title: Special layouts
+  - title: Partial Differential Equations
     output: web, pdf
 
     folderitems:
@@ -243,55 +240,5 @@ entries:
     - title: Shuffle layout
       url: /mydoc_shuffle.html
       output: web, pdf
-
-  - title: Troubleshooting
-    output: web, pdf
-
-    folderitems:
-
-    - title: Troubleshooting
-      url: /mydoc_troubleshooting.html
-      output: web, pdf
-
-  - title: Tag archives
-    output: web
-    folderitems:
-
-    - title: Tag archives overview
-      url: /mydoc_tag_archives_overview.html
-      output: web
-
-      subfolders:
-      - title: Tag archive pages
-        output: web
-        subfolderitems:
-
-        - title: Formatting pages
-          url: /tag_formatting.html
-          output: web
-
-        - title: Navigation pages
-          url: /tag_navigation.html
-          output: web
-
-        - title: Content types pages
-          url: /tag_content_types.html
-          output: web
-
-        - title: Publishing pages
-          url: /tag_publishing.html
-          output: web
-
-        - title: Special layout pages
-          url: /tag_special_layouts.html
-          output: web
-
-        - title: Collaboration pages
-          url: /tag_collaboration.html
-          output: web
-
-        - title: Troubleshooting pages
-          url: /tag_troubleshooting.html
-          output: web
 
 # Copyright 2021 Google LLC
