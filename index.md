@@ -409,30 +409,15 @@ See the topics under "Formatting" in the sidebar for more information.
 
 If you want to use an automated system for managing links, see [Automated Links][mydoc_hyperlinks.html#automatedlinks]. This approach automatically creates a list of Markdown references to simplify linking.
 
-<div class="tab">
-  <button class="tablinks" onclick="openTab(event, 'Julia')">Julia</button>
-  <button class="tablinks" onclick="openTab(event, 'Python')">Python</button>
-  <button class="tablinks" onclick="openTab(event, 'Cpp')">C++</button>
-</div>
+<script>
+let tabData = [
+  { name: 'Julia', content: '// Julia code here' },
+  { name: 'Python', content: '// Python code here' },
+  { name: 'Cpp', content: '// Cpp code here' }
+];
 
-<!-- Tab content -->
-<div id="Julia" class="tabcontent">
-   <pre id="jl" class="code-block active">
-    // Julia code here
-    </pre>
-</div>
-
-<div id="Python" class="tabcontent">
-  <pre id="py" class="code-block active">
-    // Python code here
-    </pre>
-</div>
-
-<div id="Cpp" class="tabcontent">
-  <pre id="cpp" class="code-block active">
-    // Cpp code here
-    </pre>
-</div>
+document.write(createTabs(tabData));
+</script>
 
 
 ## Other instructions

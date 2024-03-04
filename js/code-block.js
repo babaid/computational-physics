@@ -18,3 +18,28 @@ function openTab(evt, tabName) {
   document.getElementById(tabName).style.display = "block";
   evt.currentTarget.className += " active";
 }
+
+function createTabs(tabData) {
+    let tabs = '';
+    let content = '';
+  
+    for (let i = 0; i < tabData.length; i++) {
+      let tabName = tabData[i].name;
+      let tabContent = tabData[i].content;
+  
+      tabs += `<button class="tablinks" onclick="openTab(event, '${tabName}')">${tabName}</button>\n`;
+  
+      content += `<div id="${tabName}" class="tabcontent">\n<pre id="${tabName.toLowerCase()}" class="code-block active">\n${tabContent}\n</pre>\n</div>\n`;
+    }
+  
+    return `<div class="tab">\n${tabs}\n</div>\n${content}`;
+  }
+  
+  let tabData = [
+    { name: 'Julia', content: '// Julia code here' },
+    { name: 'Python', content: '// Python code here' },
+    { name: 'Cpp', content: '// Cpp code here' }
+  ];
+  
+  document.write(createTabs(tabData));
+  
