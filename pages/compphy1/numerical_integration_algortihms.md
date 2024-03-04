@@ -5,7 +5,7 @@
 
 <script> 
 let tabData = [
-  { name: 'Julia', content: '// Julia code her' },
+  { name: 'Julia', content: '// using LinearAlgebra \n' },
   { name: 'Python', content: '// Python code here' },
   { name: 'Cpp', content: '// Cpp code here' }
 ];
