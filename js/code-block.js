@@ -35,11 +35,4 @@ function createTabs(tabData) {
     return `<div class="tab">\n${tabs}\n</div>\n${content}`;
   }
   
-  let tabData = [
-    { name: 'Julia', content: '// Julia code here' },
-    { name: 'Python', content: '// Python code here' },
-    { name: 'Cpp', content: '// Cpp code here' }
-  ];
-  
-  document.write(createTabs(tabData));
   
