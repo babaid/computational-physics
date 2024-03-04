@@ -19,6 +19,8 @@ function openTab(evt, tabName) {
   evt.currentTarget.className += " active";
 }
 
+
+
 function createTabs(tabData) {
     let tabs = '';
     let content = '';

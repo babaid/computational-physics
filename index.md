@@ -184,28 +184,21 @@ entries:
     output: web, pdf
     folderitems:
 
-    - title: Get started
+    - title: Setup
       url: /index.html
       output: web, pdf
       type: homepage
 
-    - title: Introduction
+    - title: 
       url: /mydoc_introduction.html
       output: web, pdf
 
-  - title: Release Notes
+  - title: Numerical Differentiation
     output: web, pdf
     folderitems:
 
-    - title: 6.0 Release notes
-      url: /mydoc_release_notes_60.html
-      output: web, pdf
 
-    - title: 5.0 Release notes
-      url: /mydoc_release_notes_50.html
-      output: web, pdf
-
-  - title: Tag archives
+  - title: Numerical Integration
     output: web
     folderitems:
 
@@ -229,6 +222,7 @@ entries:
         - title: Content types pages
           url: /tag_content_types.html
           output: web
+          
 ```
 
 Each `folder` or `subfolder` must contain a `title` and `output` property. Each `folderitem` or `subfolderitem` must contain a `title`, `url`, and `output` property.
@@ -409,15 +403,31 @@ See the topics under "Formatting" in the sidebar for more information.
 
 If you want to use an automated system for managing links, see [Automated Links][mydoc_hyperlinks.html#automatedlinks]. This approach automatically creates a list of Markdown references to simplify linking.
 
-<script>
-let tabData = [
-  { name: 'Julia', content: '// Julia code here you love u' },
-  { name: 'Python', content: '// Python code here :()' },
-  { name: 'Cpp', content: '// Cpp code here' }
-];
+<div class="tab">
+  <button class="tablinks" onclick="openTab(event, 'Julia')">Julia</button>
+  <button class="tablinks" onclick="openTab(event, 'Python')">Python</button>
+  <button class="tablinks" onclick="openTab(event, 'Cpp')">C++</button>
+</div>
 
-document.write(createTabs(tabData));
-</script>
+<!-- Tab content -->
+<div id="Julia" class="tabcontent">
+   <pre id="jl" class="code-block active">
+   
+    // Julia code here
+    </pre>
+</div>
+
+<div id="Python" class="tabcontent">
+  <pre id="py" class="code-block active">
+    // Python code here
+    </pre>
+</div>
+
+<div id="Cpp" class="tabcontent">
+  <pre id="cpp" class="code-block active">
+    // Cpp code here
+    </pre>
+</div> 
 
 
 ## Other instructions
