@@ -1,22 +1,3 @@
----
-title: Numerical Integration Algorithms
-keywords: numerical integration, trapezoid, simpson
-last_updated: March 5, 2024
-tags: [numerical_integration]
-summary: ""
-sidebar: mydoc_sidebar
-permalink: numerical_differentiation_algorithms.html
-folder: cp1
----
-
-
-
-
-
-
-
-
-
 <script src="js/code-block.js"></script>
 <link rel="stylesheet" type="text/css" href="css/code-block.css">
 
@@ -47,4 +28,3 @@ folder: cp1
     // Cpp code here
     </pre>
 </div> 
-

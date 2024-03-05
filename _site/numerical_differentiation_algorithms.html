@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
 <meta name="keywords" content="numerical_integration,  numerical integration, trapezoid, simpson">
-<title>Numerical Integration Algorithms | Computational Pyhsics TUM</title>
+<title>Numerical Differentiation | Computational Pyhsics TUM</title>
 <link rel="stylesheet" href="css/syntax.css">
 
 <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -95,6 +95,26 @@
     </script>
     
 
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$$','$$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\(","\\)"] ],
+      },
+      TeX: {
+        Macros: {
+          bra: ["\\langle{#1}|", 1],
+          ket: ["|{#1}\\rangle", 1],
+          braket: ["\\langle{#1}\\rangle", 1],
+          bk: ["\\langle{#1}|{#2}|{#3}\\rangle", 3]
+       }
+     }
+    });
+  </script>
+  
+  <script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
 </head>
 <body>
 <!-- Navigation -->
@@ -137,7 +157,7 @@
 
 
 
-  <a class="email" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:de.babai2000@gmail.com?subject=Computational Physics TUM feedback&body=I have some feedback about the Numerical Integration Algorithms page: ' + window.location.href;"><i class="fa fa-envelope-o"></i> Feedback</a>
+  <a class="email" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:de.babai2000@gmail.com?subject=Computational Physics TUM feedback&body=I have some feedback about the Numerical Differentiation page: ' + window.location.href;"><i class="fa fa-envelope-o"></i> Feedback</a>
 
 </li>
 
@@ -157,7 +177,7 @@
                                 searchInput: document.getElementById('search-input'),
                                 resultsContainer: document.getElementById('results-container'),
                                 dataSource: 'search.json',
-                                searchResultTemplate: '<li><a href="{url}" title="Numerical Integration Algorithms">{title}</a></li>',
+                                searchResultTemplate: '<li><a href="{url}" title="Numerical Differentiation">{title}</a></li>',
                     noResultsText: 'No results found.',
                             limit: 10,
                             fuzzy: true,
@@ -410,15 +430,13 @@
         <!-- Content Column -->
         <div class="col-md-9" id="tg-sb-content">
             <div class="post-header">
-   <h1 class="post-title-main">Numerical Integration Algorithms</h1>
+   <h1 class="post-title-main">Numerical Differentiation</h1>
 </div>
 
 
 
 <div class="post-content">
 
-   
-    <div class="summary"></div>
    
 
     
@@ -455,30 +473,78 @@ $('#toc').on('click', 'a', function() {
 
 <link rel="stylesheet" type="text/css" href="css/code-block.css" />
 
-<div class="tab">
-  <button class="tablinks" onclick="openTab(event, 'Julia')">Julia</button>
-  <button class="tablinks" onclick="openTab(event, 'Python')">Python</button>
-  <button class="tablinks" onclick="openTab(event, 'Cpp')">C++</button>
-</div>
+<p>We would like to perform \(\frac{df}{dx}\) for a function f so that the approximation has a low error. There are three main methods. Forward, backward and central differences.</p>
 
-<!-- Tab content -->
-<div id="Julia" class="tabcontent">
-   <pre id="jl" class="code-block active">
-    // Julia code here
-    </pre>
-</div>
+<p>As we know from a beginner math course differentiation looks as follows:</p>
 
-<div id="Python" class="tabcontent">
-  <pre id="py" class="code-block active">
-    // Python code here
-    </pre>
-</div>
+\[f'(x) \approx \frac{f(x+h)-f(x)}{h}\]
 
-<div id="Cpp" class="tabcontent">
-  <pre id="cpp" class="code-block active">
-    // Cpp code here
-    </pre>
-</div>
+<p>This is what we call the forward difference.
+The backwards difference is defined as</p>
+
+\[f'(x)  \approx \frac{f(x)-f(x-h)}{h}\]
+
+<p>And finally the central difference is</p>
+
+\[f'(x)  \approx \frac{f(x+\frac{h}{2})-f(x\frac{h}{2})}{h}\]
+
+<p>When taking the limit of \(h\rightarrow \infty\) we end up with the analytical derivatives. Of course on a computer h has to be finite and greater than 0.</p>
+
+<p>Expanding these approximations for small h, we can check what the error of them is. While forwards and backwards differences have a large error of \(\mathbf{O}(h)\), while the central difference has an error of \(\mathbf{O}(h^2)\).</p>
+
+<p>The code for these is rather straight forward:</p>
+
+<script> 
+
+
+let tabData1 = [
+  { name: 'Julia', content: 'forward_difference(f::Function, x, h=1e-3) = (f(x+h)-f(x))/h' },
+  { name: 'Python', content: '// Python code here' },
+  { name: 'Cpp', content: '// Cpp code here' }
+];
+
+
+document.write(createTabs(tabData1, "set1"));
+
+</script>
+
+<p>Backward differences</p>
+
+<script>
+
+
+
+
+</script>
+
+<p>Central differences</p>
+
+<script> 
+let tabData3 = [
+  { name: 'Julia', content: 'central_difference(f::Function, x, h=1e-3) = (f(x+h/2)-f(x-h/2))/h' },
+  { name: 'Python', content: '// Python code here' },
+  { name: 'Cpp', content: '// Cpp code here' }
+];
+
+document.write(createTabs(tabData3, "set3-"));
+
+</script>
+
+<script>
+
+  
+window.onload = function() {
+  // Get all elements with class="tablinks"
+  var tablinks = document.getElementsByClassName("tablinks");
+
+  // If there are any tab links, click the first one
+  if (tablinks.length > 0) {
+    tablinks[0].click();
+  }
+};
+
+
+</script>
 
 
 
@@ -502,7 +568,7 @@ $('#toc').on('click', 'a', function() {
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2024 Copyright 2023 --. All rights reserved. <br />
-<span>Page last updated:</span> March 5, 2024<br/> Site last generated: Mar 5, 2024 <br />
+<span>Page last updated:</span> March 5, 2024<br/> Site last generated: Mar 6, 2024 <br />
 <p><img src="images/company_logo.png" alt="Company logo"/></p>
                 </div>
             </div>

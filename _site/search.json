@@ -20,15 +20,6 @@
 ,
 
 {
-"title": "Numerical Integration Algorithms",
-"tags": "numerical_integration",
-"keywords": "numerical integration, trapezoid, simpson",
-"url": "numerical_differentiation_algorithms.html",
-"summary": ""
-}
-,
-
-{
 "title": "News",
 "tags": "",
 "keywords": "news, blog, updates, release notes, announcements",
@@ -42,6 +33,15 @@
 "tags": "",
 "keywords": "news, blog, updates, release notes, announcements",
 "url": "news_archive.html",
+"summary": ""
+}
+,
+
+{
+"title": "Numerical Differentiation",
+"tags": "numerical_integration",
+"keywords": "numerical integration, trapezoid, simpson",
+"url": "numerical_differentiation_algorithms.html",
 "summary": ""
 }
 ,
@@ -177,6 +177,15 @@
 "tags": "",
 "keywords": "",
 "url": "pagescp1root_finding_intro.html",
+"summary": ""
+}
+,
+
+{
+"title": "",
+"tags": "",
+"keywords": "",
+"url": "pagescp1temp.html",
 "summary": ""
 }
 
