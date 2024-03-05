@@ -1,0 +1,3 @@
+/home/berke/Documents/dev/computational-physics/code-examples/cpp/root_finding/build/CMakeFiles/Root_finding.dir
+/home/berke/Documents/dev/computational-physics/code-examples/cpp/root_finding/build/CMakeFiles/edit_cache.dir
+/home/berke/Documents/dev/computational-physics/code-examples/cpp/root_finding/build/CMakeFiles/rebuild_cache.dir
