@@ -1,0 +1,187 @@
+
+[
+
+{
+"title": "Get Started",
+"tags": "get_started",
+"keywords": "get started",
+"url": "get_started.html",
+"summary": ""
+}
+,
+
+{
+"title": "Computational Physics the right way",
+"tags": "getting_started",
+"keywords": "sample homepage",
+"url": "index.html",
+"summary": ""
+}
+,
+
+{
+"title": "Numerical Integration Algorithms",
+"tags": "numerical_integration",
+"keywords": "numerical integration, trapezoid, simpson",
+"url": "numerical_differentiation_algorithms.html",
+"summary": ""
+}
+,
+
+{
+"title": "News",
+"tags": "",
+"keywords": "news, blog, updates, release notes, announcements",
+"url": "news.html",
+"summary": ""
+}
+,
+
+{
+"title": "News",
+"tags": "",
+"keywords": "news, blog, updates, release notes, announcements",
+"url": "news_archive.html",
+"summary": ""
+}
+,
+
+{
+"title": "Numerical Differentiaton Introduction",
+"tags": "numerical_differentiation",
+"keywords": "numerical differentiation, trapezoid, simpson",
+"url": "numerical_integration_intro.html",
+"summary": ""
+}
+,
+
+{
+"title": "Numerical Integration Algorithms",
+"tags": "numerical_integration",
+"keywords": "numerical integration, trapezoid, simpson",
+"url": "numerical_integration_algorithms.html",
+"summary": ""
+}
+,
+
+{
+"title": "",
+"tags": "",
+"keywords": "",
+"url": "pagescp1fitting_algorithms.html",
+"summary": ""
+}
+,
+
+{
+"title": "",
+"tags": "",
+"keywords": "",
+"url": "pagescp1fitting_intro.html",
+"summary": ""
+}
+,
+
+{
+"title": "",
+"tags": "",
+"keywords": "",
+"url": "pagescp1interpolation_algorithms.html",
+"summary": ""
+}
+,
+
+{
+"title": "",
+"tags": "",
+"keywords": "",
+"url": "pagescp1interpolation_intro.html",
+"summary": ""
+}
+,
+
+{
+"title": "",
+"tags": "",
+"keywords": "",
+"url": "pagescp1linear_algebra.html",
+"summary": ""
+}
+,
+
+{
+"title": "",
+"tags": "",
+"keywords": "",
+"url": "pagescp1linear_algebra_intro.html",
+"summary": ""
+}
+,
+
+{
+"title": "",
+"tags": "",
+"keywords": "",
+"url": "pagescp1numerical_integration_intro.html",
+"summary": ""
+}
+,
+
+{
+"title": "",
+"tags": "",
+"keywords": "",
+"url": "pagescp1odes_algorithms.html",
+"summary": ""
+}
+,
+
+{
+"title": "",
+"tags": "",
+"keywords": "",
+"url": "pagescp1odes_intro.html",
+"summary": ""
+}
+,
+
+{
+"title": "",
+"tags": "",
+"keywords": "",
+"url": "pagescp1pdes_algorithms.html",
+"summary": ""
+}
+,
+
+{
+"title": "",
+"tags": "",
+"keywords": "",
+"url": "pagescp1pdes_intro.html",
+"summary": ""
+}
+,
+
+{
+"title": "",
+"tags": "",
+"keywords": "",
+"url": "pagescp1root_finding_algorithms.html",
+"summary": ""
+}
+,
+
+{
+"title": "",
+"tags": "",
+"keywords": "",
+"url": "pagescp1root_finding_intro.html",
+"summary": ""
+}
+
+
+
+
+
+]
