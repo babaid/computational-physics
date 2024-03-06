@@ -11,6 +11,12 @@ folder: cp1
 
 <link rel="stylesheet" type="text/css" href="css/code-block.css">
 <script src="js/code-block.js"></script>
+
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.0/styles/default.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
 We would like to perform $$\frac{df}{dx}$$ for a function f so that the approximation has a low error. There are three main methods. Forward, backward and central differences.
 
 As we know from a beginner math course differentiation looks as follows:
@@ -32,62 +38,58 @@ Expanding these approximations for small h, we can check what the error of them 
 
 The code for these is rather straight forward:
 
+<div class="code-block">
+  <div class="tabs">
+    <button class="tablink" onclick="openCode(event, 'Python')">Python</button>
+    <button class="tablink" onclick="openCode(event, 'Cpp')">C++</button>
+    <button class="tablink defaultOpen" onclick="openCode(event, 'Julia')">Julia</button>
+  </div>
+  <div class="Python tabcontent">
+    <pre><code class="python">
+    # Python code goes here
+    import numpy as np
+    </code></pre>
+  </div>
+  <div class="Cpp tabcontent">
+    <pre><code class="cpp">
+    // C++ code goes here
+    #include &lt;iostream&gt;
 
-
-
-
-<h2>Code Block 1</h2>
-
-<div class="tabs">
-    <div class="tab active" onclick="changeTab(this, 'python')">Python</div>
-    <div class="tab" onclick="changeTab(this, 'javascript')">JavaScript</div>
-    <div class="tab" onclick="changeTab(this, 'java')">Java</div>
+    int main(){
+        return 0;
+    }
+    </code></pre>
+  </div>
+  <div class="Julia tabcontent">
+    <pre><code class="julia">
+    # Julia code goes here
+    using LinearAlgebra
+    </code></pre>
+  </div>
 </div>
+
+
 
 <div class="code-block">
-    <pre class="python">
-    def hello_world():
-        print("Hello, world!")
-    </pre>
-    <pre class="javascript" style="display: none;">
-    function helloWorld() {
-        console.log("Hello, world!");
-    }
-    </pre>
-    <pre class="java" style="display: none;">
-    public class HelloWorld {
-        public static void main(String[] args) {
-            System.out.println("Hello, World!");
-        }
-    }
-    </pre>
+  <div class="tabs">
+    <button class="tablink" onclick="openCode(event, 'Python')">Python</button>
+    <button class="tablink" onclick="openCode(event, 'Cpp')">C++</button>
+    <button class="tablink defaultOpen" onclick="openCode(event, 'Julia')">Julia</button>
+  </div>
+  <div class="Python tabcontent">
+    <pre><code class="python">
+    # Python code goes here
+    </code></pre>
+  </div>
+  <div class="Cpp tabcontent">
+    <pre><code class="cpp">
+    // C++ code goes here
+    </code></pre>
+  </div>
+  <div class="Julia tabcontent">
+    <pre><code class="julia">
+    # Julia code goes here
+    </code></pre>
+  </div>
 </div>
-
-<h2>Code Block 2</h2>
-
-<div class="tabs">
-    <div class="tab active" onclick="changeTab(this, 'python')">Python</div>
-    <div class="tab" onclick="changeTab(this, 'javascript')">JavaScript</div>
-    <div class="tab" onclick="changeTab(this, 'java')">Java</div>
-</div>
-
-<div class="code-block">
-     <pre class="python">
-    def hello_world():
-        print("Hello, world!")
-    </pre>
-    <pre class="javascript" style="display: none;">
-    function helloWorld() {
-        console.log("Hello, world!");
-    }
-    </pre>
-    <pre class="java" style="display: none;">
-    public class HelloWorld {
-        public static void main(String[] args) {
-            System.out.println("Hello, World!");
-        }
-    }
-    </pre>
-</div>
-
 
