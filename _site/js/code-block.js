@@ -1,85 +1,48 @@
-// function openTab(evt, tabName) {
-//   // Declare all variables
-//   var i, tabcontent, tablinks;
+import { Tabs, TabList, Tab, TabPanels, TabPanel } from "@reach/tabs";
+import "@reach/tabs/styles.css";
 
-//   // Get all elements with class="tabcontent" and hide them
-//   tabcontent = document.getElementsByClassName("tabcontent");
-//   for (i = 0; i < tabcontent.length; i++) {
-//     tabcontent[i].style.display = "none";
-//   }
+const MultiLangCodeBlock = ({ children }) => {
+  const codeTitles = children.map(
+    (child) => child?.props?.children?.props?.title
+  );
+  const tabLabels = children.map((child) =>
+    child?.props?.children?.props?.className.replace(/language-/, ``).split(` `)
+  );
 
-//   // Get all elements with class="tablinks" and remove the class "active"
-//   tablinks = document.getElementsByClassName("tablinks");
-//   for (i = 0; i < tablinks.length; i++) {
-//     tablinks[i].className = tablinks[i].className.replace(" active", "");
-//   }
+  const [tabIndex, setTabindex] = useState(0);
+  const [title, setTitle] = useState(codeTitles[0]);
 
-//   // Show the current tab, and add an "active" class to the button that opened the tab
-//   document.getElementById(tabName).style.display = "block";
-//   evt.currentTarget.className += " active";
-// }
+  const handleTabsChange = (index) => {
+    setTabindex(index);
+    setTitle(codeTitles[index]);
+  };
 
-// function createTabs(tabData, idPrefix) {
-//   let tabs = '';
-//   let content = '';
-
-//   for (let i = 0; i < tabData.length; i++) {
-//     let tabName = tabData[i].name;
-//     let tabContent = tabData[i].content;
-
-//     // Append the idPrefix to the id
-//     let id = idPrefix + tabName;
-
-//     tabs += `<button class="tablinks" onclick="openTab(event, '${id}')">${tabName}</button>\n`;
-
-//     content += `<div id="${id}" class="tabcontent">\n<pre id="${id.toLowerCase()}" class="code-block active">\n${tabContent}\n</pre>\n</div>\n`;
-//   }
-
-//   return `<div class="tab">\n${tabs}\n</div>\n${content}`;
-// }
-
-
-function openTab(evt, tabName) {
-  // Declare all variables
-  var i, tabcontent, tablinks;
-
-  // Get the parent element of the clicked tab
-  var parent = evt.currentTarget.parentElement;
-
-  // Get all sibling elements with class="tabcontent" and hide them
-  tabcontent = parent.querySelectorAll(".tabcontent");
-  for (i = 0; i < tabcontent.length; i++) {
-    tabcontent[i].style.display = "none";
-  }
-
-  // Get all sibling elements with class="tablinks" and remove the class "active"
-  tablinks = parent.querySelectorAll(".tablinks");
-  for (i = 0; i < tablinks.length; i++) {
-    tablinks[i].className = tablinks[i].className.replace(" active", "");
-  }
-
-  // Show the current tab, and add an "active" class to the button that opened the tab
-  document.getElementById(tabName).style.display = "block";
-  evt.currentTarget.className += " active";
-}
-
-
-
-function createTabs(tabData, idPrefix) {
-  let tabs = '';
-  let content = '';
-
-  for (let i = 0; i < tabData.length; i++) {
-    let tabName = tabData[i].name;
-    let tabContent = tabData[i].content;
-
-    // Append the idPrefix to the id
-    let id = idPrefix + tabName;
-
-    tabs += `<button class="tablinks" onclick="openTab(event, '${id}')">${tabName}</button>\n`;
-
-    content += `<div id="${id}" class="tabcontent">\n<pre id="${id.toLowerCase()}" class="code-block active">\n${tabContent}\n</pre>\n</div>\n`;
-  }
-
-  return `<div class="tab">\n${tabs}\n</div>\n${content}`;
-}
+  return (
+    <Tabs index={tabIndex} onChange={handleTabsChange}>
+      <div sx={{ display: "flex", variant: `styles.CodeBlock.title` }}>
+        <div sx={{ flex: 1 }}>{title}</div>
+        <TabList
+          sx={{
+            color: "mutedText",
+            "[data-selected]": { color: "mutedPrimary" },
+          }}
+        >
+          {tabLabels.map((label) => (
+            <Tab key={label}>{label}</Tab>
+          ))}
+        </TabList>
+      </div>
+      <TabPanels>
+        {children.map((child) => {
+          // split off title so the CodeBlock from the theme doesn't render a header, this component does that
+          const { title, ...blockProps } = child.props.children.props;
+          return (
+            <TabPanel key={blockProps.className}>
+              <CodeBlock {...blockProps} />
+            </TabPanel>
+          );
+        })}
+      </TabPanels>
+    </Tabs>
+  );
+};

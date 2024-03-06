@@ -471,8 +471,6 @@ $('#toc').on('click', 'a', function() {
 
    <script src="js/code-block.js"></script>
 
-<link rel="stylesheet" type="text/css" href="css/code-block.css" />
-
 <p>We would like to perform \(\frac{df}{dx}\) for a function f so that the approximation has a low error. There are three main methods. Forward, backward and central differences.</p>
 
 <p>As we know from a beginner math course differentiation looks as follows:</p>
@@ -494,58 +492,36 @@ The backwards difference is defined as</p>
 
 <p>The code for these is rather straight forward:</p>
 
-<script> 
+<MultiLangCodeBlock>
 
 
-let tabData1 = [
-  { name: 'Julia', content: 'forward_difference(f::Function, x, h=1e-3) = (f(x+h)-f(x))/h' },
-  { name: 'Python', content: '// Python code here' },
-  { name: 'Cpp', content: '// Cpp code here' }
-];
+```js title=index.js numberLines hl=1
 
 
-document.write(createTabs(tabData1, "set1"));
-
-</script>
-
-<p>Backward differences</p>
-
-<script>
+const language = "JavaScript";
+console.log(language);
+```
 
 
+```python title=index.py numberLines hl=1
 
 
-</script>
+language = "Python"
 
-<p>Central differences</p>
-
-<script> 
-let tabData3 = [
-  { name: 'Julia', content: 'central_difference(f::Function, x, h=1e-3) = (f(x+h/2)-f(x-h/2))/h' },
-  { name: 'Python', content: '// Python code here' },
-  { name: 'Cpp', content: '// Cpp code here' }
-];
-
-document.write(createTabs(tabData3, "set3-"));
-
-</script>
-
-<script>
-
-  
-window.onload = function() {
-  // Get all elements with class="tablinks"
-  var tablinks = document.getElementsByClassName("tablinks");
-
-  // If there are any tab links, click the first one
-  if (tablinks.length > 0) {
-    tablinks[0].click();
-  }
-};
+print(language)
+```
 
 
-</script>
+```rust title=index.rs numberLines hl=1
 
+
+let language = "Rust";
+
+println!("{}", language);
+```
+
+
+</MultiLangCodeBlock>
 
 
     <div class="tags">
