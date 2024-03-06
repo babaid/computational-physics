@@ -471,8 +471,9 @@ $('#toc').on('click', 'a', function() {
 
    <link rel="stylesheet" type="text/css" href="css/code-block.css" />
 
-<p>"”script src=”js/code-block.js”&gt;script
-We would like to perform \(\frac{df}{dx}\) for a function f so that the approximation has a low error. There are three main methods. Forward, backward and central differences.</p>
+<script src="js/code-block.js"></script>
+
+<p>We would like to perform \(\frac{df}{dx}\) for a function f so that the approximation has a low error. There are three main methods. Forward, backward and central differences.</p>
 
 <p>As we know from a beginner math course differentiation looks as follows:</p>
 
@@ -492,17 +493,6 @@ The backwards difference is defined as</p>
 <p>Expanding these approximations for small h, we can check what the error of them is. While forwards and backwards differences have a large error of \(\mathbf{O}(h)\), while the central difference has an error of \(\mathbf{O}(h^2)\).</p>
 
 <p>The code for these is rather straight forward:</p>
-
-<p>&lt;!DOCTYPE html&gt;</p>
-<html>
-<head>
-    <style>
-        .tab { cursor: pointer; padding: 10px; border: 1px solid #ccc; display: inline-block; }
-        .active { background-color: #ddd; }
-        .code-block { border: 1px solid #ccc; padding: 10px; margin-top: 10px; }
-    </style>
-</head>
-<body>
 
 <h2>Code Block 1</h2>
 
@@ -557,23 +547,6 @@ The backwards difference is defined as</p>
     }
     </pre>
 </div>
-
-<script>
-    function changeTab(tab, language) {
-        var tabs = tab.parentNode.getElementsByClassName('tab');
-        for (var i = 0; i < tabs.length; i++) {
-            tabs[i].className = tabs[i].className.replace(' active', '');
-        }
-        var codeBlocks = tab.parentNode.nextElementSibling.getElementsByTagName('pre');
-        for (var i = 0; i < codeBlocks.length; i++) {
-            codeBlocks[i].style.display = codeBlocks[i].className === language ? 'block' : 'none';
-        }
-        tab.className += ' active';
-    }
-</script>
-
-</body>
-</html>
 
 
 

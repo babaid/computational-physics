@@ -10,7 +10,7 @@ folder: cp1
 
 
 <link rel="stylesheet" type="text/css" href="css/code-block.css">
-""script src="js/code-block.js">script
+<script src="js/code-block.js"></script>
 We would like to perform $$\frac{df}{dx}$$ for a function f so that the approximation has a low error. There are three main methods. Forward, backward and central differences.
 
 As we know from a beginner math course differentiation looks as follows:
@@ -35,16 +35,6 @@ The code for these is rather straight forward:
 
 
 
-<!DOCTYPE html>
-<html>
-<head>
-    <style>
-        .tab { cursor: pointer; padding: 10px; border: 1px solid #ccc; display: inline-block; }
-        .active { background-color: #ddd; }
-        .code-block { border: 1px solid #ccc; padding: 10px; margin-top: 10px; }
-    </style>
-</head>
-<body>
 
 <h2>Code Block 1</h2>
 
@@ -100,20 +90,4 @@ The code for these is rather straight forward:
     </pre>
 </div>
 
-<script>
-    function changeTab(tab, language) {
-        var tabs = tab.parentNode.getElementsByClassName('tab');
-        for (var i = 0; i < tabs.length; i++) {
-            tabs[i].className = tabs[i].className.replace(' active', '');
-        }
-        var codeBlocks = tab.parentNode.nextElementSibling.getElementsByTagName('pre');
-        for (var i = 0; i < codeBlocks.length; i++) {
-            codeBlocks[i].style.display = codeBlocks[i].className === language ? 'block' : 'none';
-        }
-        tab.className += ' active';
-    }
-</script>
-
-</body>
-</html>
 

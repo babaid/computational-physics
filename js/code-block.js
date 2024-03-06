@@ -1,12 +1,11 @@
-function changeTab(language) {
-  var tabs = document.getElementsByClassName('tab');
+function changeTab(tab, language) {
+  var tabs = tab.parentNode.getElementsByClassName('tab');
   for (var i = 0; i < tabs.length; i++) {
       tabs[i].className = tabs[i].className.replace(' active', '');
   }
-  document.getElementById(language).style.display = 'none';
-  document.getElementById('python').style.display = 'none';
-  document.getElementById('javascript').style.display = 'none';
-  document.getElementById('java').style.display = 'none';
-  document.getElementById(language).style.display = 'block';
-  event.currentTarget.className += ' active';
+  var codeBlocks = tab.parentNode.nextElementSibling.getElementsByTagName('pre');
+  for (var i = 0; i < codeBlocks.length; i++) {
+      codeBlocks[i].style.display = codeBlocks[i].className === language ? 'block' : 'none';
+  }
+  tab.className += ' active';
 }
