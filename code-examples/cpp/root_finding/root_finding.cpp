@@ -1,4 +1,5 @@
 #include <cmath>
+#include <cstdlib>
 #include <iostream>
 #include <functional>
 #include <cassert>
@@ -32,6 +33,32 @@ double bisection_method(double x_minus, double x_plus,
   return x;
 }
 
+double differential(std::function<double(double)> f, double x, double h){
+  return (f(x + h) - f(x)) / h; 
+}
+
+double newton_raphson(std::function<double(double)> f, double x_0){
+  double TOLERANCE = 1e-8;
+  size_t MAX_STEPS = 10000;
+  int i; // iterator
+  double dx;
+
+  for(i=0; i<MAX_STEPS; ++i){
+    if(std::abs(f(x_0)) < TOLERANCE) break;
+    
+    dx = - f(x_0) / differential(f, x_0, TOLERANCE);
+    
+    // backtracking
+    while(std::abs(f(x_0 + dx)) > std::abs(f(x_0))) dx = dx/2;
+    
+    //update
+    x_0 = x_0 + dx;
+  }
+
+  std::cout << "Number of iterations (Newton Raphson): " << i << '\n';
+  return x_0;
+}
+
 double error(double e, double a){
   return std::abs(e - a) / e;
 }
@@ -42,9 +69,13 @@ int main(){
   
   double exact = std::sqrt(2.0);
   double bm = bisection_method(x_m, x_p, f);
-
+  double nr = newton_raphson(f, x_p);
+  
   std::cout << "Root, Error (Bisection): " << bm  
     << ", " << error(exact, bm) << '\n';
+  std::cout << "Root, Error (Newton Raphson): " << nr 
+    << ", " << error(exact, nr) << '\n';
+
 
   return 0;
 }
