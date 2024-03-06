@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
 <meta name="keywords" content="numerical_integration,  numerical integration, trapezoid, simpson">
-<title>Numerical Differentiation | Computational Pyhsics TUM</title>
+<title>Numerical Differentiation | Computational Pyhsics @ TUM</title>
 <link rel="stylesheet" href="css/syntax.css">
 
 <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -127,7 +127,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="fa fa-home fa-lg navbar-brand" href="index.html">&nbsp;<span class="projectTitle"> Computational Pyhsics TUM</span></a>
+            <a class="fa fa-home fa-lg navbar-brand" href="index.html">&nbsp;<span class="projectTitle"> Computational Pyhsics @ TUM</span></a>
         </div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
@@ -469,9 +469,10 @@ $('#toc').on('click', 'a', function() {
 
     
 
-   <script src="js/code-block.js"></script>
+   <link rel="stylesheet" type="text/css" href="css/code-block.css" />
 
-<p>We would like to perform \(\frac{df}{dx}\) for a function f so that the approximation has a low error. There are three main methods. Forward, backward and central differences.</p>
+<p>"”script src=”js/code-block.js”&gt;script
+We would like to perform \(\frac{df}{dx}\) for a function f so that the approximation has a low error. There are three main methods. Forward, backward and central differences.</p>
 
 <p>As we know from a beginner math course differentiation looks as follows:</p>
 
@@ -492,36 +493,88 @@ The backwards difference is defined as</p>
 
 <p>The code for these is rather straight forward:</p>
 
-<MultiLangCodeBlock>
+<p>&lt;!DOCTYPE html&gt;</p>
+<html>
+<head>
+    <style>
+        .tab { cursor: pointer; padding: 10px; border: 1px solid #ccc; display: inline-block; }
+        .active { background-color: #ddd; }
+        .code-block { border: 1px solid #ccc; padding: 10px; margin-top: 10px; }
+    </style>
+</head>
+<body>
 
+<h2>Code Block 1</h2>
 
-```js title=index.js numberLines hl=1
+<div class="tabs">
+    <div class="tab active" onclick="changeTab(this, 'python')">Python</div>
+    <div class="tab" onclick="changeTab(this, 'javascript')">JavaScript</div>
+    <div class="tab" onclick="changeTab(this, 'java')">Java</div>
+</div>
 
+<div class="code-block">
+    <pre class="python">
+    def hello_world():
+        print("Hello, world!")
+    </pre>
+    <pre class="javascript" style="display: none;">
+    function helloWorld() {
+        console.log("Hello, world!");
+    }
+    </pre>
+    <pre class="java" style="display: none;">
+    public class HelloWorld {
+        public static void main(String[] args) {
+            System.out.println("Hello, World!");
+        }
+    }
+    </pre>
+</div>
 
-const language = "JavaScript";
-console.log(language);
-```
+<h2>Code Block 2</h2>
 
+<div class="tabs">
+    <div class="tab active" onclick="changeTab(this, 'python')">Python</div>
+    <div class="tab" onclick="changeTab(this, 'javascript')">JavaScript</div>
+    <div class="tab" onclick="changeTab(this, 'java')">Java</div>
+</div>
 
-```python title=index.py numberLines hl=1
+<div class="code-block">
+     <pre class="python">
+    def hello_world():
+        print("Hello, world!")
+    </pre>
+    <pre class="javascript" style="display: none;">
+    function helloWorld() {
+        console.log("Hello, world!");
+    }
+    </pre>
+    <pre class="java" style="display: none;">
+    public class HelloWorld {
+        public static void main(String[] args) {
+            System.out.println("Hello, World!");
+        }
+    }
+    </pre>
+</div>
 
+<script>
+    function changeTab(tab, language) {
+        var tabs = tab.parentNode.getElementsByClassName('tab');
+        for (var i = 0; i < tabs.length; i++) {
+            tabs[i].className = tabs[i].className.replace(' active', '');
+        }
+        var codeBlocks = tab.parentNode.nextElementSibling.getElementsByTagName('pre');
+        for (var i = 0; i < codeBlocks.length; i++) {
+            codeBlocks[i].style.display = codeBlocks[i].className === language ? 'block' : 'none';
+        }
+        tab.className += ' active';
+    }
+</script>
 
-language = "Python"
+</body>
+</html>
 
-print(language)
-```
-
-
-```rust title=index.rs numberLines hl=1
-
-
-let language = "Rust";
-
-println!("{}", language);
-```
-
-
-</MultiLangCodeBlock>
 
 
     <div class="tags">

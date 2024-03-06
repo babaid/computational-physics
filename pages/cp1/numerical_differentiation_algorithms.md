@@ -8,8 +8,9 @@ permalink: numerical_differentiation_algorithms.html
 folder: cp1
 ---
 
-<script src="js/code-block.js"></script>
 
+<link rel="stylesheet" type="text/css" href="css/code-block.css">
+""script src="js/code-block.js">script
 We would like to perform $$\frac{df}{dx}$$ for a function f so that the approximation has a low error. There are three main methods. Forward, backward and central differences.
 
 As we know from a beginner math course differentiation looks as follows:
@@ -33,33 +34,86 @@ The code for these is rather straight forward:
 
 
 
-<MultiLangCodeBlock>
 
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .tab { cursor: pointer; padding: 10px; border: 1px solid #ccc; display: inline-block; }
+        .active { background-color: #ddd; }
+        .code-block { border: 1px solid #ccc; padding: 10px; margin-top: 10px; }
+    </style>
+</head>
+<body>
 
-```js title=index.js numberLines hl=1
+<h2>Code Block 1</h2>
 
+<div class="tabs">
+    <div class="tab active" onclick="changeTab(this, 'python')">Python</div>
+    <div class="tab" onclick="changeTab(this, 'javascript')">JavaScript</div>
+    <div class="tab" onclick="changeTab(this, 'java')">Java</div>
+</div>
 
-const language = "JavaScript";
-console.log(language);
-```
+<div class="code-block">
+    <pre class="python">
+    def hello_world():
+        print("Hello, world!")
+    </pre>
+    <pre class="javascript" style="display: none;">
+    function helloWorld() {
+        console.log("Hello, world!");
+    }
+    </pre>
+    <pre class="java" style="display: none;">
+    public class HelloWorld {
+        public static void main(String[] args) {
+            System.out.println("Hello, World!");
+        }
+    }
+    </pre>
+</div>
 
+<h2>Code Block 2</h2>
 
-```python title=index.py numberLines hl=1
+<div class="tabs">
+    <div class="tab active" onclick="changeTab(this, 'python')">Python</div>
+    <div class="tab" onclick="changeTab(this, 'javascript')">JavaScript</div>
+    <div class="tab" onclick="changeTab(this, 'java')">Java</div>
+</div>
 
+<div class="code-block">
+     <pre class="python">
+    def hello_world():
+        print("Hello, world!")
+    </pre>
+    <pre class="javascript" style="display: none;">
+    function helloWorld() {
+        console.log("Hello, world!");
+    }
+    </pre>
+    <pre class="java" style="display: none;">
+    public class HelloWorld {
+        public static void main(String[] args) {
+            System.out.println("Hello, World!");
+        }
+    }
+    </pre>
+</div>
 
-language = "Python"
+<script>
+    function changeTab(tab, language) {
+        var tabs = tab.parentNode.getElementsByClassName('tab');
+        for (var i = 0; i < tabs.length; i++) {
+            tabs[i].className = tabs[i].className.replace(' active', '');
+        }
+        var codeBlocks = tab.parentNode.nextElementSibling.getElementsByTagName('pre');
+        for (var i = 0; i < codeBlocks.length; i++) {
+            codeBlocks[i].style.display = codeBlocks[i].className === language ? 'block' : 'none';
+        }
+        tab.className += ' active';
+    }
+</script>
 
-print(language)
-```
+</body>
+</html>
 
-
-```rust title=index.rs numberLines hl=1
-
-
-let language = "Rust";
-
-println!("{}", language);
-```
-
-
-</MultiLangCodeBlock>
