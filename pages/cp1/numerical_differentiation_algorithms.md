@@ -8,14 +8,12 @@ permalink: numerical_differentiation_algorithms.html
 folder: cp1
 ---
 
-
 <link rel="stylesheet" type="text/css" href="css/code-block.css">
 <script src="js/code-block.js"></script>
 
 <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.0/styles/default.min.css">
 <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.0/highlight.min.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
-
 
 We would like to perform $$\frac{df}{dx}$$ for a function f so that the approximation has a low error. There are three main methods. Forward, backward and central differences.
 
@@ -38,6 +36,7 @@ Expanding these approximations for small h, we can check what the error of them 
 
 The code for these is rather straight forward:
 
+
 <div class="code-block">
   <div class="tabs">
     <button class="tablink" onclick="openCode(event, 'Python')">Python</button>
@@ -52,23 +51,57 @@ The code for these is rather straight forward:
   </div>
   <div class="Cpp tabcontent">
     <pre><code class="cpp">
-    // C++ code goes here
-    #include &lt;iostream&gt;
-
-    int main(){
-        return 0;
-    }
+        #include &lt;functional&gt;
+        //for f scalar
+        double forward_difference(std::function&lt;double(double)&gt;& f, double x, double h){
+          return (f(x+h)+-f(x))/h;
+        }
+        //for f vectorial
+        double forward_difference(std::function&lt;std::valarray&lt;double&gt;(std::valarray&lt;double&gt;)&gt;& f, std::valarray&lt;double&gt; xs, std::valarray&lt;double&gt; h){
+          auto ys_1 = f(xs+h);
+          auto ys_2 = f(xs);
+          return ys_1-ys_2;
+        }
     </code></pre>
+
+
+
+
   </div>
   <div class="Julia tabcontent">
     <pre><code class="julia">
-    # Julia code goes here
-    using LinearAlgebra
+    forward_difference(f::Function, x, h=1e-3) = (f(x+h)-f(x))/h
     </code></pre>
+  </div>
+
+  <div id="CppNote" style="display: none;">
+    <!-- Your note goes here -->
+    {% include note.html content="You should not use std::valarrays. When it was implemented, someone was lazy and there are lots of random errors and segmentation faults that it can cause. Fall back onto using std::vectors or std::arrays." %}
   </div>
 </div>
 
 
+<div class="code-block">
+  <div class="tabs">
+    <button class="tablink" onclick="openCode(event, 'Python')">Python</button>
+    <button class="tablink" onclick="openCode(event, 'Cpp')">C++</button>
+    <button class="tablink defaultOpen" onclick="openCode(event, 'Julia')">Julia</button>
+  </div>
+  <div class="Python tabcontent">
+    <pre><code class="python">
+    # Python code goes here
+    </code></pre>
+  </div>
+  <div class="Cpp tabcontent">
+    <pre><code class="cpp">
+    </code></pre>
+  </div>
+  <div class="Julia tabcontent">
+    <pre><code class="julia">
+   backward_difference(f::Function, x, h=1e-3) =  (f(x)-f(x-h))/h
+    </code></pre>
+  </div>
+</div>
 
 <div class="code-block">
   <div class="tabs">
@@ -88,8 +121,31 @@ The code for these is rather straight forward:
   </div>
   <div class="Julia tabcontent">
     <pre><code class="julia">
-    # Julia code goes here
+   central_difference(f::Function, x, h=1e-3) = (f(x+h/2)-f(x-h/2))/h
     </code></pre>
   </div>
 </div>
 
+When working with an array of values, e.g. measurements you just shift the array to the right and calculate the differences:
+
+<div class="code-block">
+  <div class="tabs">
+    <button class="tablink" onclick="openCode(event, 'Python')">Python</button>
+    <button class="tablink" onclick="openCode(event, 'Cpp')">C++</button>
+    <button class="tablink defaultOpen" onclick="openCode(event, 'Julia')">Julia</button>
+  </div>
+  <div class="Python tabcontent">
+    <pre><code class="python">
+    # Python code goes here
+    </code></pre>
+  </div>
+  <div class="Cpp tabcontent">
+    <pre><code class="cpp">
+    </code></pre>
+  </div>
+  <div class="Julia tabcontent">
+    <pre><code class="julia">
+    function forward_difference(xs::Vector{Float64}, ys::Vector{Float64}) = (ys[2:end] .- y[1:end-1]) ./ (xs[2:end] .- xs[1:end-1])
+    </code></pre>
+  </div>
+</div>

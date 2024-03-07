@@ -11,7 +11,19 @@ function openCode(evt, codeName) {
   }
   parent.querySelector(`.${codeName}`).style.display = "block";
   evt.currentTarget.className += " active";
+
+  // Get the note element
+  var note = document.getElementById('CppNote');
+  // Check if the C++ tab is selected
+  if (codeName === 'Cpp') {
+    // If it is, display the note
+    note.style.display = 'block';
+  } else {
+    // If it's not, hide the note
+    note.style.display = 'none';
+  }
 }
+
 
 // Get the element with id="defaultOpen" and click on it
 window.onload = function() {
