@@ -27,8 +27,14 @@
   
   /* Style the tab content */
   .tabcontent {
+    height: 100%;
     display: none;
     padding: 6px 12px;
     border-top: none;
+    background-color: #ffffff;
   }
   
+  .hljs{
+    background: #ffffff;
+    border: none;  
+  }

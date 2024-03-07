@@ -469,15 +469,15 @@ $('#toc').on('click', 'a', function() {
 
     
 
-   <link rel="stylesheet" type="text/css" href="css/code-block.css" />
-
-<script src="js/code-block.js"></script>
+   <script src="js/code-block.js"></script>
 
 <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.0/styles/default.min.css" />
 
 <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.0/highlight.min.js"></script>
 
 <script>hljs.initHighlightingOnLoad();</script>
+
+<link rel="stylesheet" type="text/css" href="css/code-block.css" />
 
 <p>We would like to perform \(\frac{df}{dx}\) for a function f so that the approximation has a low error. There are three main methods. Forward, backward and central differences.</p>
 
@@ -526,23 +526,18 @@ The backwards difference is defined as</p>
           return ys_1-ys_2;
         }
     </code></pre>
+    <!-- Your note goes here -->
+    <div class="CppNote" style="display: none;">
+      <div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> You should not use std::valarrays. When it was implemented, someone was lazy and there are lots of random errors and segmentation faults that it can cause. Fall back onto using std::vectors or std::arrays.</div>
 
 
 
-
+    </div>
   </div>
   <div class="Julia tabcontent">
     <pre><code class="julia">
     forward_difference(f::Function, x, h=1e-3) = (f(x+h)-f(x))/h
     </code></pre>
-  </div>
-
-  <div id="CppNote" style="display: none;">
-    <!-- Your note goes here -->
-    <div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> You should not use std::valarrays. When it was implemented, someone was lazy and there are lots of random errors and segmentation faults that it can cause. Fall back onto using std::vectors or std::arrays.</div>
-
-
-
   </div>
 </div>
 

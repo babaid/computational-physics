@@ -12,23 +12,45 @@ function openCode(evt, codeName) {
   parent.querySelector(`.${codeName}`).style.display = "block";
   evt.currentTarget.className += " active";
 
-  // Get the note element
-  var note = document.getElementById('CppNote');
+  // Get the note element within the parent
+  var note = parent.querySelector('.CppNote');
   // Check if the C++ tab is selected
-  if (codeName === 'Cpp') {
+  if (codeName === 'Cpp' && note) {
     // If it is, display the note
     note.style.display = 'block';
-  } else {
+  } else if (note) {
     // If it's not, hide the note
     note.style.display = 'none';
   }
 }
 
 
-// Get the element with id="defaultOpen" and click on it
+
+
 window.onload = function() {
   var codeBlocks = document.getElementsByClassName("code-block");
   for (var i = 0; i < codeBlocks.length; i++) {
     codeBlocks[i].querySelector(".defaultOpen").click();
   }
+
+  // var codeBlocks = document.getElementsByClassName('tabcontent');
+
+
+  //   var codeContents = document.getElementsByClassName('tabcontent');
+  //   var maxHeight = 0;
+  
+  //   // Find the maximum height
+  //   for (var i = 0; i < codeContents.length; i++) {
+  //     if (codeContents[i].clientHeight > maxHeight) {
+  //       maxHeight = codeContents[i].clientHeight;
+  //     }
+  //   }
+  
+  //   // Set the height of all code contents to the maximum height
+  //   for (var i = 0; i < codeContents.length; i++) {
+  //     codeContents[i].style.height = 2.5*maxHeight + 'px';
+  //   }
+  
+
+  
 };

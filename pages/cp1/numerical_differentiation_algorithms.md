@@ -8,12 +8,16 @@ permalink: numerical_differentiation_algorithms.html
 folder: cp1
 ---
 
-<link rel="stylesheet" type="text/css" href="css/code-block.css">
+
 <script src="js/code-block.js"></script>
 
 <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.0/styles/default.min.css">
 <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.0/highlight.min.js"></script>
+
 <script>hljs.initHighlightingOnLoad();</script>
+<link rel="stylesheet" type="text/css" href="css/code-block.css">
+
+
 
 We would like to perform $$\frac{df}{dx}$$ for a function f so that the approximation has a low error. There are three main methods. Forward, backward and central differences.
 
@@ -35,7 +39,6 @@ When taking the limit of $$h\rightarrow \infty$$ we end up with the analytical d
 Expanding these approximations for small h, we can check what the error of them is. While forwards and backwards differences have a large error of $$\mathbf{O}(h)$$, while the central difference has an error of $$\mathbf{O}(h^2)$$.
 
 The code for these is rather straight forward:
-
 
 <div class="code-block">
   <div class="tabs">
@@ -63,20 +66,15 @@ The code for these is rather straight forward:
           return ys_1-ys_2;
         }
     </code></pre>
-
-
-
-
+    <!-- Your note goes here -->
+    <div class="CppNote" style="display: none;">
+      {% include note.html content="You should not use std::valarrays. When it was implemented, someone was lazy and there are lots of random errors and segmentation faults that it can cause. Fall back onto using std::vectors or std::arrays." %}
+    </div>
   </div>
   <div class="Julia tabcontent">
     <pre><code class="julia">
     forward_difference(f::Function, x, h=1e-3) = (f(x+h)-f(x))/h
     </code></pre>
-  </div>
-
-  <div id="CppNote" style="display: none;">
-    <!-- Your note goes here -->
-    {% include note.html content="You should not use std::valarrays. When it was implemented, someone was lazy and there are lots of random errors and segmentation faults that it can cause. Fall back onto using std::vectors or std::arrays." %}
   </div>
 </div>
 
@@ -102,6 +100,9 @@ The code for these is rather straight forward:
     </code></pre>
   </div>
 </div>
+
+
+
 
 <div class="code-block">
   <div class="tabs">
