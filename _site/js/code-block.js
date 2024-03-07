@@ -31,26 +31,5 @@ window.onload = function() {
   var codeBlocks = document.getElementsByClassName("code-block");
   for (var i = 0; i < codeBlocks.length; i++) {
     codeBlocks[i].querySelector(".defaultOpen").click();
-  }
-
-  // var codeBlocks = document.getElementsByClassName('tabcontent');
-
-
-  //   var codeContents = document.getElementsByClassName('tabcontent');
-  //   var maxHeight = 0;
-  
-  //   // Find the maximum height
-  //   for (var i = 0; i < codeContents.length; i++) {
-  //     if (codeContents[i].clientHeight > maxHeight) {
-  //       maxHeight = codeContents[i].clientHeight;
-  //     }
-  //   }
-  
-  //   // Set the height of all code contents to the maximum height
-  //   for (var i = 0; i < codeContents.length; i++) {
-  //     codeContents[i].style.height = 2.5*maxHeight + 'px';
-  //   }
-  
-
-  
+  }  
 };
